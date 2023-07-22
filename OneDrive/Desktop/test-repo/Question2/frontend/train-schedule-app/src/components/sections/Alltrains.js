@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 
-import TrainList from '../components/TrainList';
+import TrainList from '../TrainList';
 import axios from 'axios';
 const Alltrains = () => {
   const [trains, setTrains] = useState([]);

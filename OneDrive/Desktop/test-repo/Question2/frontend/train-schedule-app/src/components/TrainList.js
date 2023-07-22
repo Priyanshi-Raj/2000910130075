@@ -1,5 +1,5 @@
 import React from 'react';
-import TrainCard from './TrainCard';
+import TrainCard from './cards/TrainCard';
 const TrainList = ({ trains }) => {
   return (
     <div>

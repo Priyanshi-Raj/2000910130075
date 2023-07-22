@@ -22,5 +22,5 @@ app.use('/register', registerRoutes);
 app.use('/auth', authRoutes);
 
 app.listen(port, () => {
-  console.log(`Native Vibes backend listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });

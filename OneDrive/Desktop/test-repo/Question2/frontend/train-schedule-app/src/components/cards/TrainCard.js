@@ -1,5 +1,5 @@
 import React from 'react';
-import "traincardstyle.css"
+
 const TrainCard = ({ train }) => {
   return (
     <div className="train-card">
