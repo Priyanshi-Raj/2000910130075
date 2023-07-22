@@ -1,0 +1,15 @@
+.train-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+    margin: 8px;
+    width: 300px;
+  }
+  
+  .train-card h3 {
+    margin-top: 0;
+  }
+  
+  .train-card p {
+    margin: 8px 0;
+  }
