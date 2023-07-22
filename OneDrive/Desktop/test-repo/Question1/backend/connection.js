@@ -1,36 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
 
+import connectToMongo from "./database/db.js";
+import express from "express";
+import cors from "cors";
+import Router from "./database/db.js";
 const app = express();
-const cors = require('cors');
 app.use(cors());
+import dotenv from "dotenv";
+dotenv.config({ path: "./backend/config.env" });
 
-
+connectToMongo();
+const port = process.env.PORT;
 
 app.use(express.json());
 
-const mongoURI = '';
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-mongoose.connection.on('connected', () => {
-  console.log('Connection succesful');
-});
-
-mongoose.connection.on('error', (err) => {
-  console.error('Error:', err);
-});
-
 const trainRoutes = require('./routes/trainroute');
 const registerRoutes = require('./routes/registerroute'); 
-
+const authRoutes=require('./routes/auth');
+app.use("/api/auth", Router);
 app.use('/trains', trainRoutes);
 app.use('/register', registerRoutes); 
+app.use('/auth', authRoutes);
 
-const port = process.env.PORT || 6000;
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+  console.log(`Native Vibes backend listening on port ${port}`);
 });
