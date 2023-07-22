@@ -3,6 +3,10 @@ import connectToMongo from "./database/db.js";
 import express from "express";
 import cors from "cors";
 import Router from "./database/db.js";
+import trainRoutes from './routes/trainroute';
+import registerRoutes from './routes/registerroute';
+import authRoutes from './routes/auth';
+
 const app = express();
 app.use(cors());
 import dotenv from "dotenv";
@@ -13,9 +17,6 @@ const port = process.env.PORT;
 
 app.use(express.json());
 
-const trainRoutes = require('./routes/trainroute');
-const registerRoutes = require('./routes/registerroute'); 
-const authRoutes=require('./routes/auth');
 app.use("/api/auth", Router);
 app.use('/trains', trainRoutes);
 app.use('/register', registerRoutes); 
